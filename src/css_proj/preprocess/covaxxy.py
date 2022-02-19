@@ -18,7 +18,7 @@ def get_path_covaxxy(date: datetime) -> str:
     return site
 
 
-def download_covaxxy(date: datetime, dest: str = "./covaxxy_data"):
+def download_covaxxy(date: datetime, dest: str = COVAXXY_PATH):
     """
     Download the covaxxy dataset for the given date.
 
@@ -47,7 +47,7 @@ def download_covaxxy(date: datetime, dest: str = "./covaxxy_data"):
 
 # Get from range of dates
 def get_covaxxy_range(
-    start_date: datetime, end_date: datetime, dest: str = "./covaxxy_data"
+    start_date: datetime, end_date: datetime, dest: str = COVAXXY_PATH
 ):
     """
     Get the covaxxy dataset for the given date range.
