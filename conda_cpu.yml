@@ -1,0 +1,27 @@
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python>=3.6
+  - pytorch-cpu
+  - numpy
+  - scipy
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - seaborn
+  - requests
+  - pip
+  - tqdm
+  - spacy
+  - pip:
+    - transformers
+# For development
+  - ipykernel
+  - jupyter
+  - black
+  - pylint
+  - flake8
+  - pytest
+  - pyyaml

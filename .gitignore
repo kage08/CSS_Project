@@ -1,0 +1,7 @@
+.envs/*
+*.pyc
+*.pyo
+__pycache__
+*.egg-info
+*.egg
+.ipynb_checkpoints
