@@ -17,6 +17,10 @@ dependencies:
   - tqdm
   - spacy
   - cupy
+  - scrapy
+  - selenium
+  - bs4
+  - webdriver-manager
   - pip:
     - transformers
 # For development
