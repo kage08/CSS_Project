@@ -15,8 +15,13 @@ dependencies:
   - pip
   - tqdm
   - spacy
+  - scrapy
+  - selenium
+  - bs4
+  - webdriver-manager
   - pip:
     - transformers
+    - tweepy
 # For development
   - ipykernel
   - jupyter
