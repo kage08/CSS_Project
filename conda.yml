@@ -23,6 +23,7 @@ dependencies:
   - webdriver-manager
   - pip:
     - transformers
+    - tweepy
 # For development
   - ipykernel
   - jupyter
