@@ -1,15 +1,12 @@
 import os, requests
 import pandas as pd
-from .consts import (
-    COVID_LIES_PATH,
-    COVID_LIES_URL,
-)
+from .consts import CURE_DATA_PATH
 import tweepy
 from tqdm import tqdm
 import logging
 
 
-cvl_features = [
+cure_features = [
     "tweet_id",
     "tweet_text",
     "retweets",
@@ -28,28 +25,8 @@ cvl_features = [
     "user_total_tweets",
     "user_total_likes",
     "user_total_lists",
-    "misconception_id",
     "label",
 ]
-
-
-def download_covid_lies(url: str = COVID_LIES_URL, path: str = COVID_LIES_PATH):
-    """
-    Download the COVID-19 lies dataset from the given URL and save it to the given path.
-
-    ---
-    Parameters:
-    ---
-    url (str): The URL of the COVID-19 lies dataset.
-    path (str): The path to save the COVID-19 lies dataset.
-    """
-    if not os.path.exists(path):
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-    print("Downloading covid_lies.csv from github...")
-    r = requests.get(url)
-    with open(path, "wb") as f:
-        f.write(r.content)
-    print("Done.")
 
 
 def get_tweet_features(tweet_id: str, api) -> dict:
@@ -85,24 +62,23 @@ def get_tweet_features(tweet_id: str, api) -> dict:
     return entry
 
 
-def get_df_covid_lies(api, path: str = COVID_LIES_PATH, start_idx: int = 0):
+def get_df_cure(api, path: str = CURE_DATA_PATH, start_idx: int = 0):
     """
-    Get the COVID-19 lies dataset from the given path.
+    Get the COVID-19 cure dataset from the given path.
 
     ---
     Parameters:
     ---
     path (str): The path to the COVID-19 lies dataset (csv).
     """
-    dataset = pd.DataFrame(columns=cvl_features)
+    dataset = pd.DataFrame(columns=cure_features)
     df = pd.read_csv(path)
     # Log to file
-    logging.basicConfig(filename="logs/covid_lies_extract.log", level=logging.INFO)
+    logging.basicConfig(filename="logs/covid_cure_extract.log", level=logging.INFO)
 
     for i in tqdm(range(start_idx, len(df))):
         try:
             entry = get_tweet_features(str(df.iloc[i]["tweet_id"]), api)
-            entry["misconception_id"] = df.iloc[i]["misconception_id"]
             entry["label"] = df.iloc[i]["label"]
             dataset = pd.concat([dataset, pd.DataFrame([entry])], ignore_index=True)
             logging.info(f"Extracted tweet {df.iloc[i]['tweet_id']}")

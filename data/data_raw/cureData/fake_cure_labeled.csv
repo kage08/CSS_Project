@@ -1,4 +1,4 @@
-tweet id,"label (0:misinformation, 1: counter-misinformation, 2: irrelevant)"
+tweet_id,label
 1238288071050706944,0
 1243032337924972546,0
 1236722713424801798,0

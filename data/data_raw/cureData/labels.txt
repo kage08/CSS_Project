@@ -1,0 +1,3 @@
+0 - misinformation
+1 - counter-misinformastion
+2 - irrelevant
