@@ -1,1 +1,1 @@
-from . import covaxxy, covid_lies
+from . import covaxxy, covid_lies, cure_data
