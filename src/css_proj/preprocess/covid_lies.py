@@ -113,7 +113,7 @@ def initialize_api(
     return api
 
 
-def get_df_covid_lies(api, path: str = COVID_LIES_PATH):
+def get_df_covid_lies(api, path: str = COVID_LIES_PATH, start_idx: int = 0):
     """
     Get the COVID-19 lies dataset from the given path.
 
@@ -127,7 +127,7 @@ def get_df_covid_lies(api, path: str = COVID_LIES_PATH):
     # Log to file
     logging.basicConfig(filename="logs/covid_lies_extract.log", level=logging.INFO)
 
-    for i in tqdm(range(len(df))):
+    for i in tqdm(range(start_idx, len(df))):
         try:
             entry = get_tweet_features(str(df.iloc[i]["tweet_id"]), api)
             entry["misconception_id"] = df.iloc[i]["misconception_id"]
