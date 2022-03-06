@@ -22,6 +22,7 @@ dependencies:
   - pip:
     - transformers
     - tweepy
+    - pre-commit
 # For development
   - ipykernel
   - jupyter

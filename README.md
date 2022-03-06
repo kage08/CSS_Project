@@ -7,5 +7,5 @@
 ```bash
 make setup # 'make setup_cpu' for CPU only
 conda activate ./.envs/css_project
-make setup_pkg
+make setup_pkg_dev
 ```
