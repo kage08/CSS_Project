@@ -9,3 +9,8 @@ make setup # 'make setup_cpu' for CPU only
 conda activate ./.envs/css_project
 make setup_pkg_dev
 ```
+## TODOS
+
+- [ ] LIWC
+- [ ] Make sure all tweet data is present
+- [ ] Keywords for public health, doctors, etc.
