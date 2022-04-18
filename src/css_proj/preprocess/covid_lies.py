@@ -140,7 +140,7 @@ def get_tweet_info(df: pd.DataFrame, idx: int, api):
         save_intermediate_df_lies(df)
         return df
     except Exception as e:
-        if "Forbidden" in str(e):
+        if not ("Rate" in str(e)):
             df.iloc[idx, df.columns.get_loc("state")] = -1
             save_intermediate_df_lies(df)
             print(e)
