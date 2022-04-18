@@ -12,5 +12,5 @@ make setup_pkg_dev
 ## TODOS
 
 - [ ] LIWC
-- [ ] Make sure all tweet data is present
+- [x] Make sure all tweet data is present
 - [ ] Keywords for public health, doctors, etc.
