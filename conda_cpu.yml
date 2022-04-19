@@ -23,6 +23,7 @@ dependencies:
     - transformers
     - tweepy
     - pre-commit
+    - empath
 # For development
   - ipykernel
   - jupyter
