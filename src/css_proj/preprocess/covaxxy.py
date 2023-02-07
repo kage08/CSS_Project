@@ -3,6 +3,7 @@ import os
 import requests
 from .consts import COVAXXY_PATH, COVAXXY_URL
 
+
 # Getting covaxxy tweet-ids
 def get_path_covaxxy(date: datetime) -> str:
     """
